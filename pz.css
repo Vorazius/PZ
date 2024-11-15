@@ -2,30 +2,54 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
-    margin: 0;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: beige;
+    background-color: #fef6e4;
     padding: 20px;
     box-sizing: border-box;
+    margin: 0;
+}
+
+.tablas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.imagen {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     text-align: center;
-    margin: 10px 0;
     background-color: #f9f4e7;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 table th, table td {
-    border: 1px solid #000;
-    padding: 12px 8px;
+    border: 1px solid #ccc;
+    padding: 16px 12px;
     font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 table th {
@@ -40,22 +64,13 @@ table th[colspan] {
     color: #222;
     font-size: 1.2rem;
     text-transform: uppercase;
-    padding: 10px;
+    padding: 12px;
 }
 
-
-@media (max-width: 600px) {
-    table, table th, table td {
-        font-size: 0.9rem;
-        padding: 10px 6px;
-    }
-
-
-    table {
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-    }
+table tr:hover {
+    background-color: #f0d9b5;
+    color: #4a3f35;
+    cursor: pointer;
 }
 
 h1 {
@@ -69,12 +84,24 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-table tr {
-    transition: background-color 0.3s ease;
-}
+@media (max-width: 600px) {
+    .tablas {
+        gap: 15px;
+    }
 
+    .imagen {
+        width: 100px;
+        height: 100px;
+    }
 
-table tr:hover {
-    background-color: #f0e6d6;
-    cursor: pointer;  
+    table, table th, table td {
+        font-size: 0.9rem;
+        padding: 10px 6px;
+    }
+
+    table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
 }
