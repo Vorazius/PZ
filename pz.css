@@ -4,73 +4,92 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background-color: #fef6e4;
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
+    color: #4a3f35;
 }
 
 .tablas {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 30px;
     width: 100%;
+    max-width: 1000px;
+    background: linear-gradient(135deg, #fff8eb, #f9f4e7);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tablas:hover {
+    background-color: #fdf3e0;
+    transform: translateY(-5px); /* Desplazamiento sutil al pasar el ratón */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .imagen {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+    border: 3px solid #e9ddc4;
 }
 
 .imagen:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+    transform: rotate(-3deg) scale(1.05); /* Ligera rotación y escalado */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 1000px;
     text-align: center;
-    background-color: #f9f4e7;
-    border-radius: 8px;
+    background-color: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 table th, table td {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     padding: 16px 12px;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 table th {
-    background-color: #e9ddc4;
-    color: #333;
+    background-color: #f0e4cc;
+    color: #3a3128;
     font-weight: bold;
     font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
 table th[colspan] {
-    background-color: #d3c5a5;
-    color: #222;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    padding: 12px;
+    background-color: #d9c8a9;
+    color: #2a2520;
+    font-size: 1.3rem;
+    padding: 15px;
+    letter-spacing: 1px;
+}
+
+table tr {
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 table tr:hover {
-    background-color: #f0d9b5;
+    background-color: #fcf0dc;
     color: #4a3f35;
-    cursor: pointer;
+    transform: scale(1.02); /* Pequeño escalado al pasar el ratón */
 }
 
 h1 {
@@ -82,16 +101,24 @@ h1 {
     text-transform: uppercase;   
     letter-spacing: 2px;          
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-@media (max-width: 600px) {
+h1:hover {
+    color: #3a3128; /* Cambio sutil de color */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* Sombra más marcada */
+}
+
+@media (max-width: 800px) {
     .tablas {
-        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
     .imagen {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
     }
 
     table, table th, table td {
@@ -101,7 +128,17 @@ h1 {
 
     table {
         width: 100%;
-        overflow-x: auto;
-        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .imagen {
+        width: 120px;
+        height: 120px;
     }
 }
