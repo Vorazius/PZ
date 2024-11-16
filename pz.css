@@ -56,14 +56,12 @@ table {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 table th, table td {
     border: 1px solid #ddd;
     padding: 16px 12px;
     font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 table th {
@@ -83,13 +81,11 @@ table th[colspan] {
 }
 
 table tr {
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    background-color: #ffffff; /* Sin efecto hover */
 }
 
 table tr:hover {
-    background-color: #fcf0dc;
-    color: #4a3f35;
-    transform: scale(1.02); /* Pequeño escalado al pasar el ratón */
+    background-color: #fcf0dc; /* Cambio de color de fondo simple */
 }
 
 h1 {
