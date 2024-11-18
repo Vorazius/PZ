@@ -138,3 +138,18 @@ h1:hover {
         height: 120px;
     }
 }
+
+.imagen-tabla {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid #e9ddc4;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.imagen-tabla:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
