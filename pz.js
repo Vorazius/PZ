@@ -25,3 +25,20 @@ window.addEventListener("click", function (event) {
         modal.style.display = "none";
     }
 });
+
+// Función para abrir el modal
+function openModal(src) {
+    modal.style.display = "flex";
+    modalImg.src = src; // Establece la fuente de la imagen ampliada
+}
+
+// Agregar eventos de clic y táctil a las imágenes
+images.forEach(img => {
+    img.addEventListener("click", function () {
+        openModal(this.src);
+    });
+
+    img.addEventListener("touchstart", function () {
+        openModal(this.src);
+    });
+});
